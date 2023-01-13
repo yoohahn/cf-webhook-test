@@ -8,8 +8,13 @@ const indexHtml = fs.readFileSync(
   "utf8"
 );
 
+const jsxCode = fs.readFileSync(
+  path.resolve(process.cwd(), "assets/compiled.js"),
+  "utf8"
+);
+
 export const getIndexString = (): string => {
-  return indexHtml;
+  return indexHtml.replace("//INSERT-CODE", jsxCode);
 };
 
 export const favIcon = (): Middleware => {

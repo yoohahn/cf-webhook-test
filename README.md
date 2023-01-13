@@ -1,5 +1,7 @@
 # Contentful WebHook Example
 
+Create a free Site and use the blog template.
+
 Install ngrok `npm i -g ngrok`
 
 Register any webhook over at Contentful https://app.contentful.com/spaces/SITEID/settings/webhooks

@@ -3,6 +3,7 @@ import koaBody from "koa-body";
 
 import { favIcon, getIndexString } from "./root";
 import { registerHook } from "./hook";
+import { registerPersonRoute } from "./persons";
 
 export const registerRoutes = (app: KoaAppType): void => {
   const router = new Router();
@@ -14,9 +15,8 @@ export const registerRoutes = (app: KoaAppType): void => {
   // Bodyparser
   app.use(koaBody({ multipart: true, urlencoded: true }));
 
-  // Register / route
+  // Register routes
   app.use(router.routes());
-
-  // Register Hook
   app.use(registerHook().routes());
+  app.use(registerPersonRoute().routes());
 };
