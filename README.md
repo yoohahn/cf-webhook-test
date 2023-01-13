@@ -17,4 +17,14 @@ $ ngrok http 3543
 $ yarn dev # to start the server
 ```
 
-Do something in Contentful that triggers an update and that
+Do something in Contentful that triggers an update.
+
+## Client
+
+```
+$ cd site
+$ yarn install
+$ yarn dev
+```
+
+Client will just render the posts. But it has access to all the author info as well.

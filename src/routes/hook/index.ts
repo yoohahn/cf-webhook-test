@@ -17,9 +17,7 @@ export const registerHook = (): KoaRouterType => {
   hookRouter.post("/", (ctx, next) => {
     let data = ctx.request.body as Entry;
 
-    data.sys.type === "DeletedEntry"
-      ? console.log("<== Unpublish ==>\n")
-      : console.log("<== Publish ==>\n");
+    console.log("<== " + data.sys.type + " ==>\n");
 
     updateBlog();
     ctx.body = "Ok";

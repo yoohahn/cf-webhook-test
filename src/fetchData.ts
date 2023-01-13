@@ -31,47 +31,43 @@ export const updateBlog = async () => {
     if (entry.sys.contentType.sys.id === "person") {
       const pId = entry.sys.id;
       const personFields = entry.fields as CF.PersonField;
-      if (!persons[pId]) {
-        persons[pId] = {
-          id: pId,
-          name: personFields.name,
-          title: personFields.title,
-          image: {
-            id: personFields.image.sys.id,
-            alt: personFields.image.fields.description,
-            src: personFields.image.fields.file.url,
-            dim: {
-              x: personFields.image.fields.file.details.image.width,
-              y: personFields.image.fields.file.details.image.height,
-            },
+      persons[pId] = {
+        id: pId,
+        name: personFields.name,
+        title: personFields.title,
+        image: {
+          id: personFields.image.sys.id,
+          alt: personFields.image.fields.description,
+          src: personFields.image.fields.file.url,
+          dim: {
+            x: personFields.image.fields.file.details.image.width,
+            y: personFields.image.fields.file.details.image.height,
           },
-        };
-      }
+        },
+      };
     } else {
       const pId = entry.sys.id;
       const postField = entry.fields as CF.BlogPostField;
-      if (!blogs[pId]) {
-        blogs[pId] = {
-          id: pId,
-          body: postField.body,
-          description: postField.description,
-          title: postField.title,
-          updatedAt: entry.updatedAt,
-          createdAt: entry.createdAt,
-          publishDate: postField.publishDate,
-          authorId: postField.author.sys.id,
-          tags: postField.tags,
-          image: {
-            id: postField.heroImage.sys.id,
-            alt: postField.heroImage.fields.description,
-            src: postField.heroImage.fields.file.url,
-            dim: {
-              x: postField.heroImage.fields.file.details.image.width,
-              y: postField.heroImage.fields.file.details.image.height,
-            },
+      blogs[pId] = {
+        id: pId,
+        body: postField.body,
+        description: postField.description,
+        title: postField.title,
+        updatedAt: entry.updatedAt,
+        createdAt: entry.createdAt,
+        publishDate: postField.publishDate,
+        authorId: postField.author.sys.id,
+        tags: postField.tags,
+        image: {
+          id: postField.heroImage.sys.id,
+          alt: postField.heroImage.fields.description,
+          src: postField.heroImage.fields.file.url,
+          dim: {
+            x: postField.heroImage.fields.file.details.image.width,
+            y: postField.heroImage.fields.file.details.image.height,
           },
-        };
-      }
+        },
+      };
     }
   }
 };

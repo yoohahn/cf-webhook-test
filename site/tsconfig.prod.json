@@ -1,0 +1,8 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "paths": {}
+  },
+  "exclude": ["node_modules", "dist", "cypress", "**/__tests__"]
+}

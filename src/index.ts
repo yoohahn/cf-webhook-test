@@ -7,6 +7,11 @@ import { registerRoutes } from "./routes";
 const app = new Koa();
 app.use(logger());
 
+app.use(async (ctx, next) => {
+  ctx.set("Access-Control-Allow-Origin", "*");
+  await next();
+});
+
 // Register Routes
 registerRoutes(app);
 
