@@ -28,3 +28,5 @@ $ yarn dev
 ```
 
 Client will just render the posts. But it has access to all the author info as well.
+
+[![Example](./example.gif)]
