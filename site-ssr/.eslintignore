@@ -1,0 +1,8 @@
+node_modules
+lib
+dist
+__mocks__/*
+*.d.ts
+vite.config.ts
+.eslintrc.js
+babel.config.js

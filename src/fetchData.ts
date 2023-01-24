@@ -24,7 +24,16 @@ function getCfClient(): contentful.ContentfulClientApi {
   return client;
 }
 
-export const updateBlog = async () => {
+export const removeEntry = (id: string): void => {
+  // @ts-ignore
+  blogs[id] = null;
+  // @ts-ignore
+  persons[id] = null;
+  delete persons[id];
+  delete blogs[id];
+}
+
+export const updateBlog = async (): Promise<void> => {
   const entries = (await getCfClient().getEntries()) as unknown;
 
   for (let entry of (entries as CF.EntriesBody).items) {

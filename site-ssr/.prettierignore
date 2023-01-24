@@ -1,0 +1,3 @@
+# Files and folders exluded when running Prettier's code formatting command --write
+lib
+node_modules

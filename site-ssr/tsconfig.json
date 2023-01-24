@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": false,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "isolatedModules": false,
+    "noEmit": true,
+    "noImplicitAny": true,
+    "outDir": "dist",
+    "jsx": "react-jsxdev",
+    "jsxImportSource": "@emotion/react",
+    "paths": {
+      "@local-test-util": ["./jest/"]
+    }
+  },
+  "include": ["src/**/*", "types/*", "server.ts", "node_modules/vite/types/*"],
+  "ts-node": {
+    "transpileOnly": true,
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}

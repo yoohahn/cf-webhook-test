@@ -1,5 +1,5 @@
 import Router from "@koa/router";
-import { updateBlog } from "../../fetchData";
+import { updateBlog, removeEntry } from "../../fetchData";
 import type { Entry } from "./type";
 
 function toString(json: any) {
@@ -18,6 +18,10 @@ export const registerHook = (): KoaRouterType => {
     let data = ctx.request.body as Entry;
 
     console.log("<== " + data.sys.type + " ==>\n");
+
+    if(data.sys.type.toLowerCase() === "DeletedEntry".toLowerCase()){
+      removeEntry(data.sys.id);
+    }
 
     updateBlog();
     ctx.body = "Ok";
