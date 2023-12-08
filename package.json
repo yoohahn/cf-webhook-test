@@ -42,5 +42,6 @@
     "trailingComma": "none",
     "bracketSpacing": true,
     "fluid": false
-  }
+  },
+  "packageManager": "yarn@4.0.2"
 }
